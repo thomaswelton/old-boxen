@@ -105,34 +105,6 @@ node default {
   include virtualbox
   include sublime_text_2
 
-  sublime_text_2::package { 'Emmet':
-    source => 'sergeche/emmet-sublime'
-  }
-
-  sublime_text_2::package { 'CoffeeScript':
-    source => 'Xavura/CoffeeScript-Sublime-Plugin'
-  }
-
-  sublime_text_2::package { 'EditorConfig':
-    source => 'sindresorhus/editorconfig-sublime'
-  }
-
-  sublime_text_2::package { 'laravel-blade':
-    source => 'Medalink/laravel-blade'
-  }
-
-  sublime_text_2::package { 'trailing_spaces':
-    source => 'SublimeText/TrailingSpaces'
-  }
-
-  sublime_text_2::package { 'sass-textmate-bundle':
-    source => 'nathos/sass-textmate-bundle'
-  }
-
-  sublime_text_2::package { 'sublime-text-puppet':
-    source => 'eklein/sublime-text-puppet'
-  }
-
   # productivity apps
   include skype
   include openoffice
@@ -172,5 +144,50 @@ node default {
   file { "${boxen::config::srcdir}/our-boxen":
     ensure => link,
     target => $boxen::config::repodir
+  }
+
+  # sublime text packages
+    sublime_text_2::package { 'Emmet':
+    source => 'sergeche/emmet-sublime'
+  }
+
+  sublime_text_2::package { 'CoffeeScript':
+    source => 'Xavura/CoffeeScript-Sublime-Plugin'
+  }
+
+  sublime_text_2::package { 'EditorConfig':
+    source => 'sindresorhus/editorconfig-sublime'
+  }
+
+  sublime_text_2::package { 'laravel-blade':
+    source => 'Medalink/laravel-blade'
+  }
+
+  sublime_text_2::package { 'trailing_spaces':
+    source => 'SublimeText/TrailingSpaces'
+  }
+
+  sublime_text_2::package { 'sass-textmate-bundle':
+    source => 'nathos/sass-textmate-bundle'
+  }
+
+  sublime_text_2::package { 'sublime-text-puppet':
+    source => 'eklein/sublime-text-puppet'
+  }
+
+  sublime_text_2::package { 'sublime_alignment':
+    source => 'wbond/sublime_alignment'
+  }
+
+  sublime_text_2::package { 'SublimeHTMLMustache':
+    source => 'adamchainz/SublimeHTMLMustache'
+  }
+
+  sublime_text_2::package { 'TrailingSpaces':
+    source => 'SublimeText/TrailingSpaces'
+  }
+
+  sublime_text_2::package { 'SideBarEnhancements':
+    source => 'titoBouzout/SideBarEnhancements'
   }
 }
