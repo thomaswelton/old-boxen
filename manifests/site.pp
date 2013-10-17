@@ -76,6 +76,75 @@ node default {
   include ruby::1_9_2
   include ruby::1_9_3
   include ruby::2_0_0
+  
+  # browsers
+  include chrome
+  include chrome::canary
+  include firefox
+  include opera
+
+  # dev tools
+  include tower
+  include github_for_mac
+  include cyberduck
+  include sequel_pro
+  include virtualbox
+  include sublime_text_2
+
+  sublime_text_2::package { 'Emmet':
+    source => 'sergeche/emmet-sublime'
+  }
+
+  sublime_text_2::package { 'CoffeeScript':
+    source => 'Xavura/CoffeeScript-Sublime-Plugin'
+  }
+
+  sublime_text_2::package { 'EditorConfig':
+    source => 'sindresorhus/editorconfig-sublime'
+  }
+
+  sublime_text_2::package { 'laravel-blade':
+    source => 'Medalink/laravel-blade'
+  }
+
+  sublime_text_2::package { 'trailing_spaces':
+    source => 'SublimeText/TrailingSpaces'
+  }
+
+  sublime_text_2::package { 'sass-textmate-bundle':
+    source => 'nathos/sass-textmate-bundle'
+  }
+
+  sublime_text_2::package { 'sublime-text-puppet':
+    source => 'eklein/sublime-text-puppet'
+  }
+
+  # productivity apps
+  include skype
+  include openoffice
+  include adobe_reader
+  include spotify
+  include harvest
+  include transmission
+
+  include java
+  include libpng
+  include wget
+  include pkgconfig
+  include pcre
+  include libtool
+  include beanstalk
+  include foreman
+  include heroku
+  include imagemagick
+  include php::5_4_17
+  include php::composer
+  include mysql
+  include redis
+
+  class { 'php::global':
+    version => '5.4.17'
+  }
 
   # common, useful packages
   package {

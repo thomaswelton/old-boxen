@@ -36,3 +36,36 @@ github "xquartz",    "1.1.0"
 
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.
+
+github "chrome"  		   , "1.1.1"
+github "firefox" 		   , "1.1.3"
+github "opera"             , "0.3.0"
+
+github "sublime_text_2"	   , "1.1.2"
+github "tower"             , "1.0.0"
+github "github_for_mac"	   , "1.0.1"
+github "cyberduck"		   , "1.0.1"
+github "sequel_pro"		   , "1.0.1"
+
+github "skype"             , "1.0.6"
+github "openoffice"        , "1.2.0"
+github "adobe_reader"	   , "1.1.0"
+github "spotify"           , "1.0.1"
+github "harvest"           , "1.0.2"
+github "transmission"      , "1.0.0"
+github "virtualbox"		   , "1.0.6"
+
+github "beanstalk"		   , "1.0.0"
+github "foreman" 		   , "1.0.0"
+github "heroku"            , "2.0.0"
+github "imagemagick"       , "1.2.1"
+github "mysql"             , "1.1.5"
+github "wget"              , "1.0.0"
+github "libtool"           , "1.0.0"
+github "pkgconfig"         , "1.0.0"
+github "pcre"              , "1.0.0"
+github "libpng"            , "1.0.0"
+
+github "java"			   , "1.1.2"
+github "php"               , "1.2.0" , :repo => "thomaswelton/puppet-php"
+github "redis"             , "1.0.0"
