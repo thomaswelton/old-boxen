@@ -67,5 +67,5 @@ github "pcre"              , "1.0.0"
 github "libpng"            , "1.0.0"
 
 github "java"			   , "1.1.2"
-github "php"               , "1.2.0" , :repo => "thomaswelton/puppet-php"
+github "php"               , "1.1.3"
 github "redis"             , "1.0.0"
