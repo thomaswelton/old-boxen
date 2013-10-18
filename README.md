@@ -49,4 +49,3 @@ This template project provides the following by default:
 
 After installation you should be able to visits http://localhost and see the octocat being served from an nginx server
 If not see this issue https://github.com/boxen/puppet-nginx/issues/5
-
