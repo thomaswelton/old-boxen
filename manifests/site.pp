@@ -153,6 +153,10 @@ node default {
     version => '5.4.17'
   }
 
+  php::extension::mcrypt { 'mcrypt for 5.4.17':
+    php => '5.4.17'
+  }
+
   # common, useful packages
   package {
     [
