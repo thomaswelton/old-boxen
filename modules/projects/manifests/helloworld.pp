@@ -5,7 +5,7 @@ class projects::helloworld {
 		source        => 'helloworldlondon/helloworld',
 		dir 		  => "/Users/${::boxen_user}/Sites/helloworld",
 		mysql         => 'helloworld',
-		nginx         => "/Users/${::boxen_user}/Sites/helloworld/conf/nginx.boxen.conf.erb",
+		nginx         => "${::boxen_repodir}/modules/projects/templates/shared/nginx.laravel.conf.erb",
 		redis         => true,
 		php           => '5.4.17',
 	}
