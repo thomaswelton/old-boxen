@@ -120,6 +120,12 @@ node default {
 
   # dev tools
   include tower
+
+  exec { 'gittower command line tools':
+    command => 'ln -s /Applications/Tower.app/Contents/MacOS/gittower /opt/boxen/bin/gittower',
+    creates => '/opt/boxen/bin/gittower',
+  }
+
   include github_for_mac
   include cyberduck
   include sequel_pro
