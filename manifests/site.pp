@@ -140,6 +140,18 @@ node default {
   include harvest
   include transmission
 
+  package { 'CreatveCloudInstaller':
+    ensure   => installed,
+    source   => 'https://ccmdls.adobe.com/AdobeProducts/PHSP/14/osx10/AAMmetadataLS20/CreativeCloudInstaller.dmg',
+    provider => appdmg,
+  }
+
+  package { 'LiveReload':
+    ensure   => installed,
+    source   => 'http://download.livereload.com/LiveReload-2.3.26.zip',
+    provider => compressed_app,
+  }
+
   include java
   include libpng
   include wget
