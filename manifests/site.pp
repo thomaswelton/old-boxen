@@ -80,16 +80,37 @@ node default {
   }
 
   # node versions
-  include nodejs::v0_4
-  include nodejs::v0_6
   include nodejs::v0_8
-  include nodejs::v0_10
+  include nodejs::v0_10_18
+
+  class { 'nodejs::global': version => 'v0.10.18' }
+
+  nodejs::module { 'bower':
+    node_version => 'v0.10.18'
+  }
+
+  nodejs::module { 'grunt-cli':
+    node_version => 'v0.10.18'
+  }
 
   # default ruby versions
   include ruby::1_8_7
   include ruby::1_9_2
   include ruby::1_9_3
   include ruby::2_0_0
+
+  class { 'ruby::global':
+    version => '2.0.0'
+  }
+
+  ruby::gem { "bundler for 2.0.0":
+    gem     => 'bundler',
+    ruby    => '2.0.0'
+  }
+  ruby::gem { "compass for 2.0.0":
+    gem     => 'compass',
+    ruby    => '2.0.0'
+  }
   
   # browsers
   include chrome
@@ -99,6 +120,12 @@ node default {
 
   # dev tools
   include tower
+
+  exec { 'gittower command line tools':
+    command => 'ln -s /Applications/Tower.app/Contents/MacOS/gittower /opt/boxen/bin/gittower',
+    creates => '/opt/boxen/bin/gittower',
+  }
+
   include github_for_mac
   include cyberduck
   include sequel_pro
@@ -113,6 +140,18 @@ node default {
   include harvest
   include transmission
 
+  package { 'CreatveCloudInstaller':
+    ensure   => installed,
+    source   => 'https://ccmdls.adobe.com/AdobeProducts/PHSP/14/osx10/AAMmetadataLS20/CreativeCloudInstaller.dmg',
+    provider => appdmg,
+  }
+
+  package { 'LiveReload':
+    ensure   => installed,
+    source   => 'http://download.livereload.com/LiveReload-2.3.26.zip',
+    provider => compressed_app,
+  }
+
   include java
   include libpng
   include wget
@@ -121,15 +160,39 @@ node default {
   include libtool
   include beanstalk
   include foreman
-  include heroku
   include imagemagick
   include php::5_4_17
   include php::composer
   include mysql
   include redis
+  include heroku
+
+  heroku::plugin { 'pipeline':
+    source => 'heroku/heroku-pipeline'
+  }
+
+  heroku::plugin { 'push':
+    source => 'ddollar/heroku-push'
+  }
+
+  heroku::plugin { 'accounts':
+    source => 'ddollar/heroku-accounts'
+  }
+
+  heroku::plugin { 'dashboard':
+    source => 'ddollar/heroku-dashboard'
+  }
+
+  heroku::plugin { 'redis-cli':
+    source => 'ddollar/heroku-redis-cli'
+  }
 
   class { 'php::global':
     version => '5.4.17'
+  }
+
+  php::extension::mcrypt { 'mcrypt for 5.4.17':
+    php => '5.4.17'
   }
 
   # common, useful packages

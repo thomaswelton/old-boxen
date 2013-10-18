@@ -111,7 +111,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-nodejs
   specs:
-    nodejs (3.2.9)
+    nodejs (3.2.10)
 
 GITHUBTARBALL
   remote: boxen/puppet-openoffice
@@ -247,7 +247,7 @@ DEPENDENCIES
   libtool (= 1.0.0)
   mysql (= 1.1.5)
   nginx (= 1.4.2)
-  nodejs (= 3.2.9)
+  nodejs (= 3.2.10)
   openoffice (= 1.2.0)
   openssl (= 1.0.0)
   opera (= 0.3.0)
