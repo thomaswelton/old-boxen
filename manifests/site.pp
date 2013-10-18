@@ -160,12 +160,32 @@ node default {
   include libtool
   include beanstalk
   include foreman
-  include heroku
   include imagemagick
   include php::5_4_17
   include php::composer
   include mysql
   include redis
+  include heroku
+
+  heroku::plugin { 'pipeline':
+    source => 'heroku/heroku-pipeline'
+  }
+
+  heroku::plugin { 'push':
+    source => 'ddollar/heroku-push'
+  }
+
+  heroku::plugin { 'accounts':
+    source => 'ddollar/heroku-accounts'
+  }
+
+  heroku::plugin { 'dashboard':
+    source => 'ddollar/heroku-dashboard'
+  }
+
+  heroku::plugin { 'redis-cli':
+    source => 'ddollar/heroku-redis-cli'
+  }
 
   class { 'php::global':
     version => '5.4.17'
