@@ -37,6 +37,10 @@ github "xquartz",    "1.1.0"
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.
 
+mod "apache",
+  :git => "git://github.com/thomaswelton/puppet-apache.git"
+
+
 github "chrome"  		   , "1.1.1"
 github "firefox" 		   , "1.1.3"
 github "opera"             , "0.3.0"
