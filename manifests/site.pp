@@ -253,4 +253,8 @@ node default {
   sublime_text_2::package { 'SideBarEnhancements':
     source => 'titoBouzout/SideBarEnhancements'
   }
+
+  sublime_text_2::package { 'SublimeLinter':
+    source => 'SublimeLinter/SublimeLinter'
+  }
 }
