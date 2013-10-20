@@ -58,13 +58,6 @@ node default {
   include hub
   include nginx
 
-  /*
-  # fail if FDE is not enabled
-  if $::root_encrypted == 'no' {
-    fail('Please enable full disk encryption and try again')
-  }
-  */
- 
   # osx settings
   include osx::global::disable_autocorrect
   include osx::global::expand_save_dialog
