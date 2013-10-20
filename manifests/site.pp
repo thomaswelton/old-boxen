@@ -180,7 +180,7 @@ node default {
   }
 
   # sublime text packages
-    sublime_text_2::package { 'Emmet':
+  sublime_text_2::package { 'Emmet':
     source => 'sergeche/emmet-sublime'
   }
 
@@ -226,5 +226,9 @@ node default {
 
   sublime_text_2::package { 'SublimeLinter':
     source => 'SublimeLinter/SublimeLinter'
+  }
+
+  sublime_text_2::package { 'dotfiles-syntax-highlighting-st2':
+    source => 'mattbanks/dotfiles-syntax-highlighting-st2'
   }
 }
