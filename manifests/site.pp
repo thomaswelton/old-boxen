@@ -179,11 +179,6 @@ node default {
     ]:
   }
 
-  file { "${boxen::config::srcdir}/our-boxen":
-    ensure => link,
-    target => $boxen::config::repodir
-  }
-
   # sublime text packages
     sublime_text_2::package { 'Emmet':
     source => 'sergeche/emmet-sublime'
