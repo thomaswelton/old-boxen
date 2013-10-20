@@ -33,7 +33,7 @@ class projects::huurdit {
     }
 
     exec { "add ${project_name} heroku-staging":
-    	command => 'git remote add staging git@heroku.com:${project_name}-staging.git',
+    	command => "git remote add staging git@heroku.com:${project_name}-staging.git",
     	cwd => "${project_dir}",
     	unless => 'git remote | grep staging',
     	require => Apache::Php::Project[$project_name],
