@@ -59,7 +59,6 @@ node default {
   include nginx
 
   # node versions
-  include nodejs::v0_8
   include nodejs::v0_10_18
 
   class { 'nodejs::global': version => 'v0.10.18' }
@@ -73,9 +72,6 @@ node default {
   }
 
   # default ruby versions
-  include ruby::1_8_7
-  include ruby::1_9_2
-  include ruby::1_9_3
   include ruby::2_0_0
 
   class { 'ruby::global':
