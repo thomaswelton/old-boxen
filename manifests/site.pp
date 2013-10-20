@@ -78,7 +78,38 @@ node default {
     gem     => 'compass',
     ruby    => '2.0.0'
   }
-  
+
+  include java
+  include libpng
+  include wget
+  include pkgconfig
+  include pcre
+  include libtool
+  include beanstalk
+  include foreman
+  include imagemagick
+  include php::5_4_17
+  include php::composer
+  include mysql
+  include redis
+
+  class { 'php::global':
+    version => '5.4.17'
+  }
+
+  php::extension::mcrypt { 'mcrypt for 5.4.17':
+    php => '5.4.17'
+  }
+
+  # common, useful packages
+  package {
+    [
+      'ack',
+      'findutils',
+      'gnu-tar'
+    ]:
+  }
+
   # browsers
   include chrome
   include chrome::canary
@@ -99,76 +130,10 @@ node default {
   include virtualbox
   include sublime_text_2
 
-  # productivity apps
-  include skype
-  include openoffice
-  include adobe_reader
-  include spotify
-  include harvest
-  include transmission
-
-  package { 'CreatveCloudInstaller':
-    ensure   => installed,
-    source   => 'https://ccmdls.adobe.com/AdobeProducts/PHSP/14/osx10/AAMmetadataLS20/CreativeCloudInstaller.dmg',
-    provider => appdmg,
-  }
-
   package { 'LiveReload':
     ensure   => installed,
     source   => 'http://download.livereload.com/LiveReload-2.3.26.zip',
     provider => compressed_app,
-  }
-
-  include java
-  include libpng
-  include wget
-  include pkgconfig
-  include pcre
-  include libtool
-  include beanstalk
-  include foreman
-  include imagemagick
-  include php::5_4_17
-  include php::composer
-  include mysql
-  include redis
-  include heroku
-
-  heroku::plugin { 'pipeline':
-    source => 'heroku/heroku-pipeline'
-  }
-
-  heroku::plugin { 'push':
-    source => 'ddollar/heroku-push'
-  }
-
-  heroku::plugin { 'accounts':
-    source => 'ddollar/heroku-accounts'
-  }
-
-  heroku::plugin { 'dashboard':
-    source => 'ddollar/heroku-dashboard'
-  }
-
-  heroku::plugin { 'redis-cli':
-    source => 'ddollar/heroku-redis-cli'
-  }
-
-  class { 'php::global':
-    version => '5.4.17'
-  }
-
-  php::extension::mcrypt { 'mcrypt for 5.4.17':
-    php => '5.4.17'
-  }
-
-  # common, useful packages
-  package {
-    [
-      'ack',
-      'findutils',
-      'gnu-tar'
-    ]:
   }
 
   # sublime text packages
@@ -222,5 +187,41 @@ node default {
 
   sublime_text_2::package { 'dotfiles-syntax-highlighting-st2':
     source => 'mattbanks/dotfiles-syntax-highlighting-st2'
+  }
+
+  include heroku
+
+  heroku::plugin { 'pipeline':
+    source => 'heroku/heroku-pipeline'
+  }
+
+  heroku::plugin { 'push':
+    source => 'ddollar/heroku-push'
+  }
+
+  heroku::plugin { 'accounts':
+    source => 'ddollar/heroku-accounts'
+  }
+
+  heroku::plugin { 'dashboard':
+    source => 'ddollar/heroku-dashboard'
+  }
+
+  heroku::plugin { 'redis-cli':
+    source => 'ddollar/heroku-redis-cli'
+  }
+
+  # productivity apps
+  include skype
+  include openoffice
+  include adobe_reader
+  include spotify
+  include harvest
+  include transmission
+
+  package { 'CreatveCloudInstaller':
+    ensure   => installed,
+    source   => 'https://ccmdls.adobe.com/AdobeProducts/PHSP/14/osx10/AAMmetadataLS20/CreativeCloudInstaller.dmg',
+    provider => appdmg,
   }
 }
