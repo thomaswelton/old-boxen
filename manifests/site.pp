@@ -58,20 +58,6 @@ node default {
   include hub
   include nginx
 
-  # osx settings
-  include osx::global::disable_autocorrect
-  include osx::global::expand_save_dialog
-  include osx::finder::empty_trash_securely
-  include osx::finder::unhide_library
-  include osx::software_update
-  include osx::disable_app_quarantine
-  class { 'osx::global::natural_mouse_scrolling':
-    enabled => false
-  }
-  class { 'osx::dock::icon_size': 
-    size => 42
-  }
-
   # node versions
   include nodejs::v0_8
   include nodejs::v0_10_18

@@ -50,7 +50,6 @@ github "tower"             , "1.0.0"
 github "github_for_mac"	   , "1.0.1"
 github "cyberduck"		   , "1.0.1"
 github "sequel_pro"		   , "1.0.1"
-github "osx"			   , "1.6.0"
 
 github "skype"             , "1.0.6"
 github "openoffice"        , "1.2.0"
