@@ -1,7 +1,7 @@
 GIT
   remote: git://github.com/thomaswelton/puppet-apache_php.git
   ref: master
-  sha: ac52dc2e88fe748dfdd8ea249e2853a5d5096ba5
+  sha: b17d809c378a85cec4b349991b4b54aeb0d7ae4e
   specs:
     apache_php (0.0.1)
 
