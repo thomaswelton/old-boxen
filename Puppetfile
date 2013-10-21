@@ -78,3 +78,5 @@ github "libpng"            , "1.0.0"
 github "java"			   , "1.1.2"
 github "php"               , "1.1.3"
 github "redis"             , "1.0.0"
+github "osx"			   , "1.0.0"
+
