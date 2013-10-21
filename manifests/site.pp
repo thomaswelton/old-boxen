@@ -58,6 +58,8 @@ node default {
   include hub
   include nginx
 
+  include apache
+
   # node versions
   include nodejs::v0_10_18
 
@@ -93,12 +95,18 @@ node default {
   include mysql
   include redis
 
+  $global_php_version = '5.4.17'
+
   class { 'php::global':
-    version => '5.4.17'
+    version => $global_php_version,
   }
 
-  php::extension::mcrypt { 'mcrypt for 5.4.17':
-    php => '5.4.17'
+  php::extension::mcrypt { "mcrypt for ${global_php_version}":
+    php => $global_php_version,
+  }
+
+  php::extension::apc { "apc for ${global_php_version}":
+    php     => $global_php_version,
   }
 
   # common, useful packages

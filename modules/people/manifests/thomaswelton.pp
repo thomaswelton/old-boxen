@@ -1,5 +1,11 @@
 class people::thomaswelton {
 
+  # projects
+  include projects::laravel
+  include projects::huurdit
+  include projects::givemeabreak
+  include projects::helloworld
+
   include zsh
 
   $home     = "/Users/${::boxen_user}"
