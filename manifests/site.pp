@@ -65,6 +65,15 @@ node default {
 
   class { 'nodejs::global': version => 'v0.10.18' }
 
+  # install some npm modules
+  nodejs::module { 'bower':
+    node_version => 'v0.10.18'
+  }
+
+  nodejs::module { 'grunt-cli':
+    node_version => 'v0.10.18'
+  }
+
   # default ruby versions
   include ruby::2_0_0
 
