@@ -91,6 +91,7 @@ node default {
   include foreman
   include imagemagick
   include php::5_4_17
+  include php::fpm::5_4_17
   include php::composer
   include mysql
   include redis
@@ -99,6 +100,10 @@ node default {
 
   class { 'php::global':
     version => $global_php_version,
+  }
+
+  apache_php::fastcgi_handler { "${global_php_version}":
+    php_version => $global_php_version
   }
 
   php::extension::mcrypt { "mcrypt for ${global_php_version}":

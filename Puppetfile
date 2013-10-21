@@ -38,7 +38,9 @@ github "xquartz",    "1.1.0"
 # https://github.com/boxen.
 
 mod "apache",
-  :git => "git://github.com/thomaswelton/puppet-apache.git"
+	:git => "git://github.com/webflo/boxen-puppet-apache.git"
+
+mod "apache_php", :git => "git://github.com/thomaswelton/puppet-apache_php.git"
 
 
 github "chrome"  		   , "1.1.1"
