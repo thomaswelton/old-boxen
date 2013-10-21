@@ -137,6 +137,8 @@ node default {
   include sequel_pro
   include virtualbox
   include sublime_text_2
+  include divvy
+  include googledrive
 
   package { 'LiveReload':
     ensure   => installed,

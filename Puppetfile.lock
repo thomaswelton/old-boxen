@@ -36,6 +36,11 @@ GITHUBTARBALL
     cyberduck (1.0.1)
 
 GITHUBTARBALL
+  remote: boxen/puppet-divvy
+  specs:
+    divvy (1.0.1)
+
+GITHUBTARBALL
   remote: boxen/puppet-dnsmasq
   specs:
     dnsmasq (1.0.0)
@@ -64,6 +69,11 @@ GITHUBTARBALL
   remote: boxen/puppet-github_for_mac
   specs:
     github_for_mac (1.0.1)
+
+GITHUBTARBALL
+  remote: boxen/puppet-googledrive
+  specs:
+    googledrive (1.0.2)
 
 GITHUBTARBALL
   remote: boxen/puppet-harvest
@@ -238,12 +248,14 @@ DEPENDENCIES
   boxen (= 3.0.2)
   chrome (= 1.1.1)
   cyberduck (= 1.0.1)
+  divvy (= 1.0.1)
   dnsmasq (= 1.0.0)
   firefox (= 1.1.3)
   foreman (= 1.0.0)
   gcc (= 2.0.1)
   git (= 1.2.5)
   github_for_mac (= 1.0.1)
+  googledrive (= 1.0.2)
   harvest (= 1.0.2)
   heroku (= 2.0.0)
   homebrew (= 1.4.1)

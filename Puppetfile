@@ -51,6 +51,8 @@ github "tower"             , "1.0.0"
 github "github_for_mac"	   , "1.0.1"
 github "cyberduck"		   , "1.0.1"
 github "sequel_pro"		   , "1.0.1"
+github "divvy"			   , "1.0.1"
+github "googledrive"	   , "1.0.2"
 
 github "skype"             , "1.0.6"
 github "openoffice"        , "1.2.0"
