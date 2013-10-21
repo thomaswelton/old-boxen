@@ -5,7 +5,7 @@ class projects::givemeabreak {
 
 	## Create Apache project running on port 10080
 	## Proxy the apache server through nginx on port 80
-	apache::php::project { $project_name:
+	apache_php::project { $project_name:
 		port 		  => 10080,
 		source        => "helloworldlondon/${project_name}",
 		dir 		  => $project_dir,
@@ -20,7 +20,7 @@ class projects::givemeabreak {
 		command => '/opt/boxen/phpenv/bin/composer install',
 		cwd => "${project_dir}",
 		creates => "${project_dir}/vendor",
-		require => Apache::Php::Project[$project_name],
+		require => Apache_php::Project[$project_name],
 	}
 
 	exec { "db install ${project_name}":
@@ -34,28 +34,28 @@ class projects::givemeabreak {
     	command => "git remote add dev git@heroku.com:${project_name}-dev.git",
     	cwd => "${project_dir}",
     	unless => 'git remote | grep dev',
-    	require => Apache::Php::Project[$project_name],
+    	require => Apache_php::Project[$project_name],
     }
 
     exec { "add ${project_name} heroku-staging":
     	command => "git remote add staging git@heroku.com:${project_name}-staging.git",
     	cwd => "${project_dir}",
     	unless => 'git remote | grep staging',
-    	require => Apache::Php::Project[$project_name],
+    	require => Apache_php::Project[$project_name],
     }
 
     exec { "run ${project_name} npm install":
 		command => '/opt/boxen/nodenv/shims/npm install',
 		cwd => "${project_dir}",
 		creates => "${project_dir}/node_modules",
-		require => Apache::Php::Project[$project_name],
+		require => Apache_php::Project[$project_name],
 	}
 
     exec { "run ${project_name} bower install":
 		command => '/opt/boxen/nodenv/shims/bower install',
 		cwd => "${project_dir}",
 		creates => "${project_dir}/bower_components",
-		require => Apache::Php::Project[$project_name],
+		require => Apache_php::Project[$project_name],
 	}
 
 }

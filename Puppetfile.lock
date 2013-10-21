@@ -1,7 +1,14 @@
 GIT
-  remote: git://github.com/thomaswelton/puppet-apache.git
+  remote: git://github.com/thomaswelton/puppet-apache_php.git
   ref: master
-  sha: 5531830ced94d26b5334e5b7c7c3a0c192fbf5c9
+  sha: ac52dc2e88fe748dfdd8ea249e2853a5d5096ba5
+  specs:
+    apache_php (0.0.1)
+
+GIT
+  remote: git://github.com/webflo/boxen-puppet-apache.git
+  ref: master
+  sha: 3a5c89f294749ac39e39d195ac894062ed9aca0d
   specs:
     apache (0.0.1)
 
@@ -233,6 +240,7 @@ GITHUBTARBALL
 DEPENDENCIES
   adobe_reader (= 1.1.0)
   apache (>= 0)
+  apache_php (>= 0)
   autoconf (= 1.0.0)
   beanstalk (= 1.0.0)
   boxen (= 3.0.2)
