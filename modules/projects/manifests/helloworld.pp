@@ -15,7 +15,6 @@ class projects::helloworld {
     exec { "run ${project_name} composer":
 		command => '/opt/boxen/phpenv/bin/composer install',
 		cwd => "/Users/${::boxen_user}/Sites/${project_name}",
-		creates => "/Users/${::boxen_user}/Sites/${project_name}/vendor",
 		require => Php::Project[$project_name],
 	}
 

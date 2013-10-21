@@ -15,7 +15,6 @@ class projects::laravel {
     exec { "run ${project_name} composer":
 		command => '/opt/boxen/phpenv/bin/composer install',
 		cwd => "${project_dir}",
-		creates => "${project_dir}/vendor",
 		require => Php::Project[$project_name],
 	}
 

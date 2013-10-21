@@ -19,7 +19,6 @@ class projects::huurdit {
     exec { "run ${project_name} composer":
 		command => '/opt/boxen/phpenv/bin/composer install',
 		cwd => "${project_dir}",
-		creates => "${project_dir}/vendor",
 		require => Apache_php::Project[$project_name],
 	}
 
