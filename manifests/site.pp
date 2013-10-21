@@ -59,6 +59,8 @@ node default {
   include nginx
 
   include apache
+  # ports apache should listen on
+  apache::port { "10080": }
 
   # node versions
   include nodejs::v0_10_18
